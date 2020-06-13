@@ -16,7 +16,7 @@ import java.util.Properties;
 
 @Getter
 @NoArgsConstructor
-@SuperBuilder(toBuilder = false)
+@SuperBuilder(toBuilder = true)
 public class BasicPersistenceUnitInfo implements PersistenceUnitInfo {
     private String persistenceUnitName;
     private String persistenceProviderClassName;

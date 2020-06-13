@@ -4,7 +4,7 @@
 
     <groupId>org.hgl.testing</groupId>
     <artifactId>jpatesting</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <modules>
         <module>jpatesting-api</module>
         <module>jpatesting-core</module>
@@ -116,7 +116,7 @@
         <connection>scm:git:https://dev.lujociclas.com/gitbucket/git/hgl/jpatesting.git</connection>
         <url>https://dev.lujociclas.com/gitbucket/hgl/jpatesting</url>
         <developerConnection>scm:git:https://dev.lujociclas.com/gitbucket/git/hgl/jpatesting.git</developerConnection>
-        <tag>v1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>

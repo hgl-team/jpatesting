@@ -92,7 +92,7 @@ public abstract class JpaConfigurerBase<
 
     @Override
     public EntityManagerFactory buildFactory() {
-        BasicPersistenceUnitInfo info = getPersistenceUnitInfoBuilder()
+        BasicPersistenceUnitInfo info = BasicPersistenceUnitInfo.builder()
                 .persistenceUnitName(persistenceUnitName)
                 .managedClassNames(this.classNames)
                 .mappingFileNames(this.mappingFiles)
@@ -108,11 +108,6 @@ public abstract class JpaConfigurerBase<
                     new PersistenceUnitInfoDescriptor(info),
                     new HashMap())
                 .build();
-    }
-
-
-    protected BasicPersistenceUnitInfo.BasicPersistenceUnitInfoBuilder<?,?> getPersistenceUnitInfoBuilder() {
-        return BasicPersistenceUnitInfo.builder();
     }
 
     protected PC getPropertyConfigurer() {

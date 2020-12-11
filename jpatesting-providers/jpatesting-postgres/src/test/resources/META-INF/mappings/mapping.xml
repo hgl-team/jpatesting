@@ -2,7 +2,7 @@
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_2.xsd">
     <package>org.hgl.testing.jpatesting.providers.test.postgres</package>
-    <entity class="MappedTestEntity" access="FIELD">
+    <entity class="org.hglteam.testing.jpatesting.providers.test.postgres.MappedTestEntity" access="FIELD">
         <attributes>
             <id name="id">
                 <column name="id"/>

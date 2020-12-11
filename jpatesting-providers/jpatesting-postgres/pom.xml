@@ -3,7 +3,7 @@
     <parent>
         <artifactId>jpatesting-providers</artifactId>
         <groupId>org.hglteam.testing</groupId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jpatesting-postgres</artifactId>
@@ -14,12 +14,12 @@
         <dependency>
             <groupId>org.hglteam.testing</groupId>
             <artifactId>jpatesting-api</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.hglteam.testing</groupId>
             <artifactId>jpatesting-core</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>1.0.1</version>
         </dependency>
 
         <dependency>

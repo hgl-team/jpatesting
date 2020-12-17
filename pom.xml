@@ -4,13 +4,31 @@
 
     <groupId>org.hglteam.testing</groupId>
     <artifactId>jpatesting</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <modules>
         <module>jpatesting-api</module>
         <module>jpatesting-core</module>
         <module>jpatesting-providers</module>
     </modules>
     <packaging>pom</packaging>
+    <name>jpatesting</name>
+    <description>Small set of classes to setup JPA on tests</description>
+    <url>https://github.com/hgl-team/jpatesting</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Jerson Huerfano</name>
+            <email>huerfano.jerson@gmail.com</email>
+            <organization>hgl-team</organization>
+            <organizationUrl>https://github.com/hgl-team</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

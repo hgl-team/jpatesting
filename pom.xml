@@ -4,7 +4,7 @@
 
     <groupId>org.hglteam.testing</groupId>
     <artifactId>jpatesting</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
     <modules>
         <module>jpatesting-api</module>
         <module>jpatesting-core</module>
@@ -221,7 +221,7 @@
         <connection>${scm.connection}</connection>
         <url>${scm.url}</url>
         <developerConnection>${scm.developerConnection}</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v1.0.2</tag>
     </scm>
 
 </project>

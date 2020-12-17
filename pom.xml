@@ -16,6 +16,10 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <junit-jupiter.version>5.6.0</junit-jupiter.version>
+
+        <scm.connection>scm:git:https://github.com/hgl-team/jpatesting.git</scm.connection>
+        <scm.url>https://github.com/hgl-team/jpatesting</scm.url>
+        <scm.developerConnection>scm:git:https://github.com/hgl-team/jpatesting.git</scm.developerConnection>
     </properties>
 
     <dependencyManagement>
@@ -68,6 +72,53 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                            <passphraseServerId>my.gpg.key</passphraseServerId>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -115,11 +166,6 @@
     <profiles>
         <profile>
             <id>archiva</id>
-            <properties>
-                <scm.connection>scm:git:https://dev.lujociclas.com/gitbucket/git/hgl/jpatesting.git</scm.connection>
-                <scm.url>https://dev.lujociclas.com/gitbucket/hgl/jpatesting</scm.url>
-                <scm.developerConnection>scm:git:https://dev.lujociclas.com/gitbucket/git/hgl/jpatesting.git</scm.developerConnection>
-            </properties>
             <distributionManagement>
                 <repository>
                     <id>internal</id>
@@ -133,16 +179,24 @@
         </profile>
         <profile>
             <id>github</id>
-            <properties>
-                <scm.connection>scm:git:https://github.com/hgl-team/jpatesting.git</scm.connection>
-                <scm.url>https://github.com/hgl-team/jpatesting</scm.url>
-                <scm.developerConnection>scm:git:https://github.com/hgl-team/jpatesting.git</scm.developerConnection>
-            </properties>
             <distributionManagement>
                 <repository>
                     <id>github</id>
                     <name>GitHub hgl-team Apache Maven Packages</name>
                     <url>https://maven.pkg.github.com/hgl-team/jpatesting</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>ossrh</id>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
         </profile>

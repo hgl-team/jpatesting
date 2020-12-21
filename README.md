@@ -75,6 +75,33 @@ static void emptyEntityManagerSuccess() {
 }
 ```
 
+or by using the JPA configurer extension
+
+``` xml
+<dependency>
+    <groupId>org.hglteam.testing</groupId>
+    <artifactId>jpatesting-junit-core</artifactId>
+    <version>1.0.2</version>
+</dependency>
+```
+
+``` java
+    ...
+    
+    @RegisterExtension
+    public static PreparedDbExtension extension = EmbeddedPostgresExtension.preparedDatabase(e -> { });
+    
+    @RegisterExtension
+    static JpaConfigurerExtension jpa = new JpaConfigurerExtension(PostgresJpaConfigurer.begin(extension::getTestDatabase)
+            .properties()
+            .schemaGenerationDatabaseAction(JpaPropertyConfigurer.DatabaseAction.DROP_AND_CREATE)
+            .and()
+            .persistenceUnitName("emptyEntityManagerSuccess")
+            .withEntity(ManagedTestEntity.class));
+            
+    ...
+```
+
 ### Configuring the persistence unit
 
 You can configure the persistence unit by adding class by class

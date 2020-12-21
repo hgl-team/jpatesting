@@ -9,6 +9,7 @@
         <module>jpatesting-api</module>
         <module>jpatesting-core</module>
         <module>jpatesting-providers</module>
+        <module>jpatesting-junit-core</module>
     </modules>
     <packaging>pom</packaging>
     <name>jpatesting</name>

@@ -15,6 +15,7 @@
             <artifactId>jpatesting-api</artifactId>
             <version>1.0.3-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>org.hglteam.testing</groupId>
             <artifactId>jpatesting-core</artifactId>
@@ -28,15 +29,23 @@
         </dependency>
 
         <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.200</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.200</version>
+            <groupId>org.hglteam.testing</groupId>
+            <artifactId>jpatesting-junit-core</artifactId>
+            <version>1.0.3-SNAPSHOT</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -48,6 +57,13 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.14.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

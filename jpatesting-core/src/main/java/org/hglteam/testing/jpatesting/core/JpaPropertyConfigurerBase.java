@@ -12,6 +12,7 @@ public abstract class JpaPropertyConfigurerBase<
         PC extends JpaPropertyConfigurerBase<PC, ?>,
         C extends JpaConfigurerBase<?, PC>>
         implements JpaPropertyConfigurer<PC,C> {
+
     private final C configurer;
     private final Map<String, Object> propertyMap = new HashMap<>();
 
@@ -21,7 +22,7 @@ public abstract class JpaPropertyConfigurerBase<
 
     @Override
     public PC driver(String driverClassName) {
-        return this.put("javax.persistence.jdbc.driver", driverClassName);
+        return this.put(JAKARTA_PERSISTENCE_JDBC_DRIVER, driverClassName);
     }
     @Override
     public PC driver(Class<?> driverClassName) {
@@ -29,68 +30,68 @@ public abstract class JpaPropertyConfigurerBase<
     }
     @Override
     public PC url(String url) {
-        return this.put("javax.persistence.jdbc.url", url);
+        return this.put(JAKARTA_PERSISTENCE_JDBC_URL, url);
     }
     @Override
     public PC username(String username) {
-        return this.put("javax.persistence.jdbc.user", username);
+        return this.put(JAKARTA_PERSISTENCE_JDBC_USER, username);
     }
     @Override
     public PC password(String password) {
-        return this.put("javax.persistence.jdbc.password", password);
+        return this.put(JAKARTA_PERSISTENCE_JDBC_PASSWORD, password);
     }
     @Override
     public PC lockTimeout(Long value) {
-        return this.put("javax.persistence.lock.timeout", value);
+        return this.put(JAKARTA_PERSISTENCE_LOCK_TIMEOUT, value);
     }
     @Override
     public PC queryTimeout(Long value) {
-        return this.put("javax.persistence.query.timeout", value);
+        return this.put(JAKARTA_PERSISTENCE_QUERY_TIMEOUT, value);
     }
 
     @Override
     public PC createScriptSource(String url) {
-        return this.put("javax.persistence.schema-generation.create-script-source", url);
+        return this.put(JAKARTA_PERSISTENCE_SCHEMA_GENERATION_CREATE_SCRIPT_SOURCE, url);
     }
 
     @Override
     public PC dropScriptSource(String url) {
-        return this.put("javax.persistence.schema-generation.drop-script-source", url);
+        return this.put(JAKARTA_PERSISTENCE_SCHEMA_GENERATION_DROP_SCRIPT_SOURCE, url);
     }
 
     @Override
     public PC sqlLoadScriptSource(String url) {
-        return this.put("javax.persistence.sql-load-script-source", url);
+        return this.put(JAKARTA_PERSISTENCE_SQL_LOAD_SCRIPT_SOURCE, url);
     }
 
     @Override
     public PC schemaGenerationDatabaseAction(DatabaseAction action) {
-        return this.put("javax.persistence.schema-generation.database.action", action.getValue());
+        return this.put(JAKARTA_PERSISTENCE_SCHEMA_GENERATION_DATABASE_ACTION, action.getValue());
     }
 
     @Override
     public PC schemaGenerationScriptsAction(ScriptAction scriptAction) {
-        return this.put("javax.persistence.schema-generation.scripts.action", scriptAction.getValue());
+        return this.put(JAKARTA_PERSISTENCE_SCHEMA_GENERATION_SCRIPTS_ACTION, scriptAction.getValue());
     }
 
     @Override
     public PC schemaGenerationCreateSource(GenerationSource source) {
-        return this.put("javax.persistence.schema-generation.create-source", source.getValue());
+        return this.put(JAKARTA_PERSISTENCE_SCHEMA_GENERATION_CREATE_SOURCE, source.getValue());
     }
 
     @Override
     public PC schemaGenerationDropSource(GenerationSource source) {
-        return this.put("javax.persistence.schema-generation.drop-source", source.getValue());
+        return this.put(JAKARTA_PERSISTENCE_SCHEMA_GENERATION_DROP_SOURCE, source.getValue());
     }
 
     @Override
     public PC schemaGenerationCreateScriptTarget(String url) {
-        return this.put("javax.persistence.schema-generation.scripts.create-target", url);
+        return this.put(JAKARTA_PERSISTENCE_SCHEMA_GENERATION_SCRIPTS_CREATE_TARGET, url);
     }
 
     @Override
     public PC schemaGenerationDropScriptTarget(String url) {
-        return this.put("javax.persistence.schema-generation.scripts.drop-target", url);
+        return this.put(JAKARTA_PERSISTENCE_SCHEMA_GENERATION_SCRIPTS_DROP_TARGET, url);
     }
 
     @Override

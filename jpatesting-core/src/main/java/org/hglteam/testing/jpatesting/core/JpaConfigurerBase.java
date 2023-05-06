@@ -5,10 +5,10 @@ import org.hglteam.testing.jpatesting.JpaConfigurer;
 import org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl;
 import org.hibernate.jpa.boot.internal.PersistenceUnitInfoDescriptor;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.SharedCacheMode;
-import javax.persistence.ValidationMode;
-import javax.persistence.spi.PersistenceUnitTransactionType;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.SharedCacheMode;
+import jakarta.persistence.ValidationMode;
+import jakarta.persistence.spi.PersistenceUnitTransactionType;
 import javax.sql.DataSource;
 import java.util.*;
 import java.util.stream.Stream;
@@ -22,8 +22,8 @@ public abstract class JpaConfigurerBase<
     private String persistenceUnitName;
     private DatasourceProvider provider;
     private String persistenceProviderClassName = DEFAULT_PERSISTENCE_PROVIDER_CLASS_NAME;
-    private List<String> classNames = new ArrayList<>();
-    private List<String> mappingFiles = new ArrayList<>();
+    private final List<String> classNames = new ArrayList<>();
+    private final List<String> mappingFiles = new ArrayList<>();
     private PC propertyConfigurer;
 
     protected JpaConfigurerBase() {

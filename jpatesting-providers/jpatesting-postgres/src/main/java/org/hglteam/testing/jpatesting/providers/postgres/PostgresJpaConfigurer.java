@@ -18,9 +18,9 @@ public final class PostgresJpaConfigurer extends JpaConfigurerBase<
     protected DataSource getDatasource() {
         PGSimpleDataSource ds = new PGSimpleDataSource();
 
-        ds.setUrl(getPropertyConfigurer().get(JpaPropertyConfigurer.JDBC_URL, Object::toString));
-        ds.setUser(getPropertyConfigurer().get(JpaPropertyConfigurer.JDBC_USER, Object::toString));
-        ds.setPassword(getPropertyConfigurer().get(JpaPropertyConfigurer.JDBC_PASSWORD, Object::toString));
+        ds.setUrl(getPropertyConfigurer().get(JpaPropertyConfigurer.JAKARTA_PERSISTENCE_JDBC_URL, Object::toString));
+        ds.setUser(getPropertyConfigurer().get(JpaPropertyConfigurer.JAKARTA_PERSISTENCE_JDBC_USER, Object::toString));
+        ds.setPassword(getPropertyConfigurer().get(JpaPropertyConfigurer.JAKARTA_PERSISTENCE_JDBC_PASSWORD, Object::toString));
 
         return ds;
     }

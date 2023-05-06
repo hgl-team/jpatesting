@@ -4,8 +4,8 @@ import org.hglteam.testing.jpatesting.JpaPropertyConfigurer;
 import org.hglteam.testing.jpatesting.providers.h2.H2JpaConfigurer;
 import org.junit.jupiter.api.Test;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

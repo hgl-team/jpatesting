@@ -1,6 +1,6 @@
 package org.hglteam.testing.jpatesting;
 
-import javax.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityManagerFactory;
 
 public interface JpaConfigurer<
         E extends JpaConfigurer<E, ?>,

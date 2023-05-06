@@ -4,11 +4,12 @@
 
     <groupId>org.hglteam.testing</groupId>
     <artifactId>jpatesting</artifactId>
-    <version>1.0.2</version>
+    <version>1.2.0</version>
     <modules>
         <module>jpatesting-api</module>
         <module>jpatesting-core</module>
         <module>jpatesting-providers</module>
+        <module>jpatesting-bom</module>
     </modules>
     <packaging>pom</packaging>
     <name>jpatesting</name>
@@ -33,7 +34,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <junit-jupiter.version>5.6.0</junit-jupiter.version>
+        <junit-jupiter.version>5.9.2</junit-jupiter.version>
 
         <scm.connection>scm:git:https://github.com/hgl-team/jpatesting.git</scm.connection>
         <scm.url>https://github.com/hgl-team/jpatesting</scm.url>
@@ -46,25 +47,19 @@
             <dependency>
                 <groupId>jakarta.persistence</groupId>
                 <artifactId>jakarta.persistence-api</artifactId>
-                <version>2.2.3</version>
+                <version>3.1.0</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
-                <version>5.4.17.Final</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-entitymanager</artifactId>
-                <version>5.4.17.Final</version>
+                <version>6.2.2.Final</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.12</version>
+                <version>1.18.26</version>
                 <scope>provided</scope>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.junit/junit-bom -->
@@ -239,7 +234,7 @@
         <connection>${scm.connection}</connection>
         <url>${scm.url}</url>
         <developerConnection>${scm.developerConnection}</developerConnection>
-        <tag>v1.0.2</tag>
+        <tag>v1.2.0</tag>
     </scm>
 
 </project>

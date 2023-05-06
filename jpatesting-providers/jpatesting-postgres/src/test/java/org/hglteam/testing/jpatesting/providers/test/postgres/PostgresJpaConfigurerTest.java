@@ -7,8 +7,8 @@ import org.hglteam.testing.jpatesting.providers.postgres.PostgresJpaConfigurer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

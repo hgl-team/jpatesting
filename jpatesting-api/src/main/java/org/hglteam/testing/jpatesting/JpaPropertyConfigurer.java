@@ -5,51 +5,62 @@ import java.util.Properties;
 import java.util.function.Function;
 
 public interface JpaPropertyConfigurer<PC extends JpaPropertyConfigurer<PC,?>, C extends JpaConfigurer<?, PC>> {
-    public static final String JDBC_DRIVER = "javax.persistence.jdbc.driver";
-    public static final String JDBC_URL = "javax.persistence.jdbc.url";
-    public static final String JDBC_USER = "javax.persistence.jdbc.user";
-    public static final String JDBC_PASSWORD = "javax.persistence.jdbc.password";
+    String JAKARTA_PERSISTENCE_JDBC_DRIVER = "jakarta.persistence.jdbc.driver";
+    String JAKARTA_PERSISTENCE_JDBC_URL = "jakarta.persistence.jdbc.url";
+    String JAKARTA_PERSISTENCE_JDBC_USER = "jakarta.persistence.jdbc.user";
+    String JAKARTA_PERSISTENCE_JDBC_PASSWORD = "jakarta.persistence.jdbc.password";
+    String JAKARTA_PERSISTENCE_LOCK_TIMEOUT = "jakarta.persistence.lock.timeout";
+    String JAKARTA_PERSISTENCE_QUERY_TIMEOUT = "jakarta.persistence.query.timeout";
+    String JAKARTA_PERSISTENCE_SCHEMA_GENERATION_CREATE_SCRIPT_SOURCE = "jakarta.persistence.schema-generation.create-script-source";
+    String JAKARTA_PERSISTENCE_SCHEMA_GENERATION_DROP_SCRIPT_SOURCE = "jakarta.persistence.schema-generation.drop-script-source";
+    String JAKARTA_PERSISTENCE_SQL_LOAD_SCRIPT_SOURCE = "jakarta.persistence.sql-load-script-source";
+    String JAKARTA_PERSISTENCE_SCHEMA_GENERATION_DATABASE_ACTION = "jakarta.persistence.schema-generation.database.action";
+    String JAKARTA_PERSISTENCE_SCHEMA_GENERATION_SCRIPTS_ACTION = "jakarta.persistence.schema-generation.scripts.action";
+    String JAKARTA_PERSISTENCE_SCHEMA_GENERATION_CREATE_SOURCE = "jakarta.persistence.schema-generation.create-source";
+    String JAKARTA_PERSISTENCE_SCHEMA_GENERATION_DROP_SOURCE = "jakarta.persistence.schema-generation.drop-source";
+    String JAKARTA_PERSISTENCE_SCHEMA_GENERATION_SCRIPTS_CREATE_TARGET = "jakarta.persistence.schema-generation.scripts.create-target";
+    String JAKARTA_PERSISTENCE_SCHEMA_GENERATION_SCRIPTS_DROP_TARGET = "jakarta.persistence.schema-generation.scripts.drop-target";
 
-    // javax.persistence.jdbc.driver
+    // jakarta.persistence.jdbc.driver
     PC driver(String driverClassName);
     PC driver(Class<?> driverClassName);
-    // javax.persistence.jdbc.url
+    // jakarta.persistence.jdbc.url
     PC url(String url);
-    // javax.persistence.jdbc.user
+    // jakarta.persistence.jdbc.user
     PC username(String url);
-    // javax.persistence.jdbc.password
+    // jakarta.persistence.jdbc.password
     PC password(String url);
 
-    // javax.persistence.lock.timeout
+    // jakarta.persistence.lock.timeout
     PC lockTimeout(Long value);
-    // javax.persistence.query.timeout
+    // jakarta.persistence.query.timeout
     PC queryTimeout(Long value);
-    // javax.persistence.validation.group.pre-persist
+    // jakarta.persistence.validation.group.pre-persist
     // PC prePersist();
-    // javax.persistence.validation.group.pre-update
+    // jakarta.persistence.validation.group.pre-update
     // PC preUpdate();
-    // javax.persistence.validation.group.pre-remove
+    // jakarta.persistence.validation.group.pre-remove
     // PC preRemove();
 
-    // javax.persistence.schema-generation.create-script-source
+    // jakarta.persistence.schema-generation.create-script-source
     PC createScriptSource(String url);
-    // javax.persistence.schema-generation.drop-script-source
+    // jakarta.persistence.schema-generation.drop-script-source
     PC dropScriptSource(String url);
-    // javax.persistence.sql-load-script-source
+    // jakarta.persistence.sql-load-script-source
     PC sqlLoadScriptSource(String url);
 
-    // javax.persistence.schema-generation.database.action
+    // jakarta.persistence.schema-generation.database.action
     PC schemaGenerationDatabaseAction(DatabaseAction action);
-    // javax.persistence.schema-generation.scripts.action
+    // jakarta.persistence.schema-generation.scripts.action
     PC schemaGenerationScriptsAction(ScriptAction scriptAction);
-    // javax.persistence.schema-generation.create-source
+    // jakarta.persistence.schema-generation.create-source
     PC schemaGenerationCreateSource(GenerationSource source);
-    // javax.persistence.schema-generation.drop-source
+    // jakarta.persistence.schema-generation.drop-source
     PC schemaGenerationDropSource(GenerationSource source);
 
-    // javax.persistence.schema-generation.scripts.create-target
+    // jakarta.persistence.schema-generation.scripts.create-target
     PC schemaGenerationCreateScriptTarget(String url);
-    // javax.persistence.schema-generation.scripts.drop-target
+    // jakarta.persistence.schema-generation.scripts.drop-target
     PC schemaGenerationDropScriptTarget(String url);
     PC put(String propertyName, Object value);
     C and();

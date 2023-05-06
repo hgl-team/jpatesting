@@ -3,7 +3,7 @@
     <parent>
         <artifactId>jpatesting</artifactId>
         <groupId>org.hglteam.testing</groupId>
-        <version>1.0.2</version>
+        <version>1.2.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jpatesting-core</artifactId>
@@ -13,7 +13,7 @@
         <dependency>
             <groupId>org.hglteam.testing</groupId>
             <artifactId>jpatesting-api</artifactId>
-            <version>1.0.2</version>
+            <version>1.2.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api -->
@@ -26,11 +26,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

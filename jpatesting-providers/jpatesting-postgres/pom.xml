@@ -3,7 +3,7 @@
     <parent>
         <artifactId>jpatesting-providers</artifactId>
         <groupId>org.hglteam.testing</groupId>
-        <version>1.0.2</version>
+        <version>1.2.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jpatesting-postgres</artifactId>
@@ -14,12 +14,12 @@
         <dependency>
             <groupId>org.hglteam.testing</groupId>
             <artifactId>jpatesting-api</artifactId>
-            <version>1.0.2</version>
+            <version>1.2.0</version>
         </dependency>
         <dependency>
             <groupId>org.hglteam.testing</groupId>
             <artifactId>jpatesting-core</artifactId>
-            <version>1.0.2</version>
+            <version>1.2.0</version>
         </dependency>
 
         <dependency>
@@ -31,7 +31,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.2.12</version>
+            <version>42.2.27</version>
             <scope>provided</scope>
         </dependency>
 
@@ -47,15 +47,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
             <groupId>io.zonky.test</groupId>
             <artifactId>embedded-postgres</artifactId>
-            <version>1.2.7</version>
+            <version>2.0.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -11,7 +11,7 @@ public final class PostgresJpaConfigurer extends JpaConfigurerBase<
         PostgresJpaConfigurer, PostgresJpaPropertyConfigurer> {
     private PostgresJpaConfigurer() { }
     private PostgresJpaConfigurer(DatasourceProvider provider) {
-        datasourceProvider(provider);
+        dataSourceProvider(provider);
     }
 
     @Override

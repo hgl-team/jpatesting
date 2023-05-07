@@ -1,14 +1,14 @@
 package org.hglteam.testing.jpatesting.core;
 
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.SharedCacheMode;
+import jakarta.persistence.ValidationMode;
+import jakarta.persistence.spi.PersistenceUnitTransactionType;
 import org.hglteam.testing.jpatesting.DatasourceProvider;
 import org.hglteam.testing.jpatesting.JpaConfigurer;
 import org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl;
 import org.hibernate.jpa.boot.internal.PersistenceUnitInfoDescriptor;
 
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.SharedCacheMode;
-import jakarta.persistence.ValidationMode;
-import jakarta.persistence.spi.PersistenceUnitTransactionType;
 import javax.sql.DataSource;
 import java.util.*;
 import java.util.stream.Stream;
@@ -43,7 +43,7 @@ public abstract class JpaConfigurerBase<
     }
 
     @Override
-    public E datasourceProvider(DatasourceProvider provider) {
+    public E dataSourceProvider(DatasourceProvider provider) {
         this.provider = provider;
         return self();
     }
@@ -86,12 +86,13 @@ public abstract class JpaConfigurerBase<
 
     @Override
     public PC properties() {
-        this.propertyConfigurer = createProperties();
+        this.propertyConfigurer = Optional.ofNullable(this.propertyConfigurer)
+                .orElseGet(this::createProperties);
         return this.propertyConfigurer;
     }
 
     @Override
-    public EntityManagerFactory buildFactory() {
+    public EntityManagerFactory buildFactory() throws Exception {
         BasicPersistenceUnitInfo info = BasicPersistenceUnitInfo.builder()
                 .persistenceUnitName(persistenceUnitName)
                 .managedClassNames(this.classNames)
@@ -106,7 +107,7 @@ public abstract class JpaConfigurerBase<
 
         return new EntityManagerFactoryBuilderImpl(
                     new PersistenceUnitInfoDescriptor(info),
-                    new HashMap())
+                    new HashMap<>())
                 .build();
     }
 
@@ -114,7 +115,7 @@ public abstract class JpaConfigurerBase<
         return propertyConfigurer;
     }
 
-    protected abstract DataSource getDatasource();
+    protected abstract DataSource getDatasource() throws Exception;
 
     protected abstract PC createProperties();
     protected abstract E self();

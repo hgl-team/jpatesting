@@ -6,7 +6,7 @@ public interface JpaConfigurer<
         E extends JpaConfigurer<E, ?>,
         PC extends JpaPropertyConfigurer<?, E>> {
     E persistenceUnitName(String name);
-    E datasourceProvider(DatasourceProvider provider);
+    E dataSourceProvider(DatasourceProvider provider);
     E persistenceProviderClassName(String className);
     PC properties();
 
@@ -17,5 +17,5 @@ public interface JpaConfigurer<
     E withMapping(String url);
     E withMappings(String... urls);
 
-    EntityManagerFactory buildFactory();
+    EntityManagerFactory buildFactory() throws Exception;
 }

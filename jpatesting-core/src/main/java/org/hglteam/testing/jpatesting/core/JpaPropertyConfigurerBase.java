@@ -95,6 +95,12 @@ public abstract class JpaPropertyConfigurerBase<
     }
 
     @Override
+    public PC clearAll() {
+        this.propertyMap.clear();
+        return self();
+    }
+
+    @Override
     public C and() {
         return configurer;
     }
@@ -114,6 +120,12 @@ public abstract class JpaPropertyConfigurerBase<
     @Override
     public PC put(String property, Object value) {
         this.propertyMap.put(property, value);
+        return self();
+    }
+
+    @Override
+    public PC remove(String propertyName) {
+        this.propertyMap.remove(propertyName);
         return self();
     }
 

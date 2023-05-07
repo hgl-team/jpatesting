@@ -2,13 +2,12 @@ package org.hglteam.testing.jpatesting.providers.test.postgres;
 
 import io.zonky.test.db.postgres.junit5.EmbeddedPostgresExtension;
 import io.zonky.test.db.postgres.junit5.PreparedDbExtension;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 import org.hglteam.testing.jpatesting.JpaPropertyConfigurer;
 import org.hglteam.testing.jpatesting.providers.postgres.PostgresJpaConfigurer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
-
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -37,7 +36,7 @@ class PostgresJpaConfigurerTest {
     }
 
     @Test
-    void emptyEntityManagerInsertSuccess() {
+    void emptyEntityManagerInsertSuccess() throws Exception {
         configurer = PostgresJpaConfigurer.begin(extension::getTestDatabase)
                 .properties()
                     .schemaGenerationDatabaseAction(JpaPropertyConfigurer.DatabaseAction.DROP_AND_CREATE)
@@ -66,7 +65,7 @@ class PostgresJpaConfigurerTest {
     }
 
     @Test
-    void mappedEntityManagerInsertSuccess() {
+    void mappedEntityManagerInsertSuccess() throws Exception {
         configurer = PostgresJpaConfigurer.begin(extension::getTestDatabase)
                     .properties()
                     .schemaGenerationDatabaseAction(JpaPropertyConfigurer.DatabaseAction.DROP_AND_CREATE)
@@ -95,7 +94,7 @@ class PostgresJpaConfigurerTest {
     }
 
     @Test
-    void mappedEntityManagerInsertSuccessWithDefault() {
+    void mappedEntityManagerInsertSuccessWithDefault() throws Exception {
         configurer = PostgresJpaConfigurer.begin()
                 .properties()
                     .schemaGenerationDatabaseAction(JpaPropertyConfigurer.DatabaseAction.DROP_AND_CREATE)

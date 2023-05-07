@@ -1,11 +1,10 @@
 package org.hglteam.testing.jpatesting.providers.test.h2;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 import org.hglteam.testing.jpatesting.JpaPropertyConfigurer;
 import org.hglteam.testing.jpatesting.providers.h2.H2JpaConfigurer;
 import org.junit.jupiter.api.Test;
-
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,7 +33,7 @@ class H2JpaConfigurerTest {
     }
 
     @Test
-    void emptyEntityManagerInsertSuccess() {
+    void emptyEntityManagerInsertSuccess() throws Exception {
         configurer = H2JpaConfigurer.start()
                 .properties()
                 .schemaGenerationDatabaseAction(JpaPropertyConfigurer.DatabaseAction.DROP_AND_CREATE)
@@ -42,6 +41,8 @@ class H2JpaConfigurerTest {
                 .url("jdbc:h2:mem:db1;DB_CLOSE_DELAY=-1")
                 .username("sa")
                 .password("sa")
+                .remove(JpaPropertyConfigurer.JAKARTA_PERSISTENCE_JDBC_USER)
+                .username("sa")
                 .put("hibernate.hbm2ddl.auto","update")
                 .and()
                 .persistenceUnitName("emptyEntityManagerSuccess")
@@ -69,7 +70,7 @@ class H2JpaConfigurerTest {
 
 
     @Test
-    void mappedEntityManagerInsertSuccess() {
+    void mappedEntityManagerInsertSuccess() throws Exception {
         configurer = H2JpaConfigurer.start()
                     .properties()
                     .schemaGenerationDatabaseAction(JpaPropertyConfigurer.DatabaseAction.DROP_AND_CREATE)

@@ -63,6 +63,9 @@ public interface JpaPropertyConfigurer<PC extends JpaPropertyConfigurer<PC,?>, C
     // jakarta.persistence.schema-generation.scripts.drop-target
     PC schemaGenerationDropScriptTarget(String url);
     PC put(String propertyName, Object value);
+    PC remove(String propertyName);
+    PC clearAll();
+
     C and();
     Map<String, Object> toMap();
     Properties toProperties();

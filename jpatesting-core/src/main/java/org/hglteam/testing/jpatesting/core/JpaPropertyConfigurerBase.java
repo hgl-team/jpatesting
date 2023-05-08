@@ -1,5 +1,6 @@
 package org.hglteam.testing.jpatesting.core;
 
+import org.hglteam.testing.jpatesting.JpaConfigurer;
 import org.hglteam.testing.jpatesting.JpaPropertyConfigurer;
 
 import java.util.HashMap;
@@ -8,15 +9,13 @@ import java.util.Optional;
 import java.util.Properties;
 import java.util.function.Function;
 
-public abstract class JpaPropertyConfigurerBase<
-        PC extends JpaPropertyConfigurerBase<PC, ?>,
-        C extends JpaConfigurerBase<?, PC>>
-        implements JpaPropertyConfigurer<PC,C> {
+public abstract class JpaPropertyConfigurerBase<PC extends JpaPropertyConfigurerBase<PC>>
+        implements JpaPropertyConfigurer<PC> {
 
-    private final C configurer;
+    private final JpaConfigurer<PC> configurer;
     private final Map<String, Object> propertyMap = new HashMap<>();
 
-    protected JpaPropertyConfigurerBase(C configurer) {
+    protected JpaPropertyConfigurerBase(JpaConfigurer<PC> configurer) {
         this.configurer = configurer;
     }
 
@@ -101,7 +100,7 @@ public abstract class JpaPropertyConfigurerBase<
     }
 
     @Override
-    public C and() {
+    public JpaConfigurer<PC> and() {
         return configurer;
     }
 

@@ -4,6 +4,7 @@ import io.zonky.test.db.postgres.junit5.EmbeddedPostgresExtension;
 import io.zonky.test.db.postgres.junit5.PreparedDbExtension;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import org.hglteam.testing.jpatesting.JpaConfigurer;
 import org.hglteam.testing.jpatesting.JpaPropertyConfigurer;
 import org.hglteam.testing.jpatesting.providers.postgres.PostgresJpaConfigurer;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PostgresJpaConfigurerTest {
-    private PostgresJpaConfigurer configurer;
+    private JpaConfigurer<?> configurer;
     private EntityManagerFactory emf;
     private EntityManager em;
 

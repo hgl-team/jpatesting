@@ -4,7 +4,7 @@
 
     <groupId>org.hglteam.testing</groupId>
     <artifactId>jpatesting</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.3-SNAPSHOT</version>
     <modules>
         <module>jpatesting-api</module>
         <module>jpatesting-core</module>

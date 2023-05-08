@@ -3,8 +3,7 @@ package org.hglteam.testing.jpatesting.providers.postgres;
 import org.hglteam.testing.jpatesting.core.JpaPropertyConfigurerBase;
 import org.postgresql.Driver;
 
-public class PostgresJpaPropertyConfigurer extends JpaPropertyConfigurerBase<
-        PostgresJpaPropertyConfigurer, PostgresJpaConfigurer> {
+public class PostgresJpaPropertyConfigurer extends JpaPropertyConfigurerBase<PostgresJpaPropertyConfigurer> {
 
     public PostgresJpaPropertyConfigurer(PostgresJpaConfigurer configurer) {
         super(configurer);

@@ -7,8 +7,7 @@ import org.postgresql.ds.PGSimpleDataSource;
 
 import javax.sql.DataSource;
 
-public final class PostgresJpaConfigurer extends JpaConfigurerBase<
-        PostgresJpaConfigurer, PostgresJpaPropertyConfigurer> {
+public final class PostgresJpaConfigurer extends JpaConfigurerBase<PostgresJpaPropertyConfigurer> {
     private PostgresJpaConfigurer() { }
     private PostgresJpaConfigurer(DatasourceProvider provider) {
         dataSourceProvider(provider);
@@ -27,12 +26,7 @@ public final class PostgresJpaConfigurer extends JpaConfigurerBase<
 
     @Override
     protected PostgresJpaPropertyConfigurer createProperties() {
-        return new PostgresJpaPropertyConfigurer(self());
-    }
-
-    @Override
-    protected PostgresJpaConfigurer self() {
-        return this;
+        return new PostgresJpaPropertyConfigurer(this);
     }
 
     public static PostgresJpaConfigurer begin() {

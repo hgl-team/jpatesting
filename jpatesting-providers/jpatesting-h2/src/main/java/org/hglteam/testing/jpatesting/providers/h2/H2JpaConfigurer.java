@@ -6,8 +6,7 @@ import org.hglteam.testing.jpatesting.core.JpaConfigurerBase;
 
 import javax.sql.DataSource;
 
-public final class H2JpaConfigurer extends JpaConfigurerBase<
-        H2JpaConfigurer, H2JpaPropertyConfigurer> {
+public final class H2JpaConfigurer extends JpaConfigurerBase<H2JpaPropertyConfigurer> {
     private H2JpaConfigurer() { }
 
     @Override
@@ -23,12 +22,7 @@ public final class H2JpaConfigurer extends JpaConfigurerBase<
 
     @Override
     protected H2JpaPropertyConfigurer createProperties() {
-        return new H2JpaPropertyConfigurer(self());
-    }
-
-    @Override
-    protected H2JpaConfigurer self() {
-        return this;
+        return new H2JpaPropertyConfigurer(this);
     }
 
     public static H2JpaConfigurer start() {

@@ -2,20 +2,18 @@ package org.hglteam.testing.jpatesting;
 
 import jakarta.persistence.EntityManagerFactory;
 
-public interface JpaConfigurer<
-        E extends JpaConfigurer<E, ?>,
-        PC extends JpaPropertyConfigurer<?, E>> {
-    E persistenceUnitName(String name);
-    E dataSourceProvider(DatasourceProvider provider);
-    E persistenceProviderClassName(String className);
+public interface JpaConfigurer<PC extends JpaPropertyConfigurer<PC>> {
+    JpaConfigurer<PC> persistenceUnitName(String name);
+    JpaConfigurer<PC> dataSourceProvider(DatasourceProvider provider);
+    JpaConfigurer<PC> persistenceProviderClassName(String className);
     PC properties();
 
-    E withEntity(String entityClassName);
-    E withEntities(String... entityClassNames);
-    E withEntity(Class<?> entityClass);
-    E withEntities(Class<?>... entityClasses);
-    E withMapping(String url);
-    E withMappings(String... urls);
+    JpaConfigurer<PC> withEntity(String entityClassName);
+    JpaConfigurer<PC> withEntities(String... entityClassNames);
+    JpaConfigurer<PC> withEntity(Class<?> entityClass);
+    JpaConfigurer<PC> withEntities(Class<?>... entityClasses);
+    JpaConfigurer<PC> withMapping(String url);
+    JpaConfigurer<PC> withMappings(String... urls);
 
     EntityManagerFactory buildFactory() throws Exception;
 }

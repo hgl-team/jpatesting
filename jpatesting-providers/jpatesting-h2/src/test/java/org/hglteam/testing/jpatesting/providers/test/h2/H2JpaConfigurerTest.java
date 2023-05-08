@@ -2,6 +2,7 @@ package org.hglteam.testing.jpatesting.providers.test.h2;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import org.hglteam.testing.jpatesting.JpaConfigurer;
 import org.hglteam.testing.jpatesting.JpaPropertyConfigurer;
 import org.hglteam.testing.jpatesting.providers.h2.H2JpaConfigurer;
 import org.junit.jupiter.api.Test;
@@ -9,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class H2JpaConfigurerTest {
-    private H2JpaConfigurer configurer;
+    private JpaConfigurer<?> configurer;
     private EntityManagerFactory emf;
     private EntityManager em;
 

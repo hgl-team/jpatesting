@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.function.Function;
 
-public interface JpaPropertyConfigurer<PC extends JpaPropertyConfigurer<PC,?>, C extends JpaConfigurer<?, PC>> {
+public interface JpaPropertyConfigurer<PC extends JpaPropertyConfigurer<PC>> {
     String JAKARTA_PERSISTENCE_JDBC_DRIVER = "jakarta.persistence.jdbc.driver";
     String JAKARTA_PERSISTENCE_JDBC_URL = "jakarta.persistence.jdbc.url";
     String JAKARTA_PERSISTENCE_JDBC_USER = "jakarta.persistence.jdbc.user";
@@ -66,7 +66,7 @@ public interface JpaPropertyConfigurer<PC extends JpaPropertyConfigurer<PC,?>, C
     PC remove(String propertyName);
     PC clearAll();
 
-    C and();
+    JpaConfigurer<PC> and();
     Map<String, Object> toMap();
     Properties toProperties();
 

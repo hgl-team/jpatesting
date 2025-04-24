@@ -1,14 +1,14 @@
 package org.hglteam.testing.jpatesting.core;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
-
 import jakarta.persistence.SharedCacheMode;
 import jakarta.persistence.ValidationMode;
 import jakarta.persistence.spi.ClassTransformer;
 import jakarta.persistence.spi.PersistenceUnitInfo;
 import jakarta.persistence.spi.PersistenceUnitTransactionType;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
 import javax.sql.DataSource;
 import java.net.URL;
 import java.util.ArrayList;
@@ -35,6 +35,8 @@ public class BasicPersistenceUnitInfo implements PersistenceUnitInfo {
     private Properties properties;
     private String persistenceXMLSchemaVersion;
     private List<ClassTransformer> transformers;
+    private String scopeAnnotationName;
+    private List<String> qualifierAnnotationNames;
 
     @Override
     public boolean excludeUnlistedClasses() {

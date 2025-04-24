@@ -1,9 +1,12 @@
 package org.hglteam.testing.jpatesting;
 
 import jakarta.persistence.EntityManagerFactory;
+import org.junit.jupiter.api.extension.*;
 
-public interface JpaConfigurer<PC extends JpaPropertyConfigurer<PC>> {
+public interface JpaConfigurer<PC extends JpaPropertyConfigurer<PC>>
+        extends AfterAllCallback, AfterEachCallback, BeforeAllCallback, BeforeEachCallback, ParameterResolver {
     JpaConfigurer<PC> persistenceUnitName(String name);
+    JpaConfigurer<PC> provisionMode(ProvisionMode mode);
     JpaConfigurer<PC> dataSourceProvider(DatasourceProvider provider);
     JpaConfigurer<PC> persistenceProviderClassName(String className);
     PC properties();

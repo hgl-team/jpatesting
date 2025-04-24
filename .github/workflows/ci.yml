@@ -22,4 +22,4 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Build with Maven
-      run: mvn -B clean package verify --file pom.xml -P production,github
+      run: mvn -B clean verify --file pom.xml -P production,github

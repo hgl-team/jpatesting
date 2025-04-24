@@ -19,20 +19,20 @@ to setup an embedded postgres instance.
 <dependency>
     <groupId>org.hglteam.testing</groupId>
     <artifactId>jpatesting-postgres</artifactId>
-    <version>1.3.0-SNAPSHOT</version>
+    <version>${project.version}</version>
 </dependency>
 
 <!-- Embedded postgres instance and driver -->
 <dependency>
     <groupId>io.zonky.test</groupId>
     <artifactId>embedded-postgres</artifactId>
-    <version>2.1.0</version>
+    <version>${zonky.embeded-postgres.version}</version>
     <scope>test</scope>
 </dependency>
 <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
-    <version>42.7.5</version>
+    <version>${postgresql.version}</version>
 </dependency>
 ```
 
